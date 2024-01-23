@@ -116,9 +116,13 @@ public class Runner {
                     };
                 }
             }
-            Competitor winner = findWinner(scoreCard);
-            System.out.println("\nWinner: " + winner.getName()+" with " + scoreCard.get(winner)+ " points!");
         }
+        Competitor winner = findWinner(scoreCard);
+        System.out.println("\nWinner: " + winner.getName()+" with " + scoreCard.get(winner)+ " points!");
+        winner.setWins(winner.getWins()+1);
+        competitorController.updateWinner(winner);
+        competition.setWinner(winner);
+        competitionController.save(competition);
     }
 
     private static Competitor findWinner(Map<Competitor, Integer> scoreCard) {

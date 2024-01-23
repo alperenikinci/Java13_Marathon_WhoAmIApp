@@ -17,4 +17,8 @@ public class CompetitorService {
     public List<Competitor> findAll() {
         return competitorRepository.findAll();
     }
+
+    public Competitor updateWinner(Competitor winner) {
+        return competitorRepository.update(winner);
+    }
 }

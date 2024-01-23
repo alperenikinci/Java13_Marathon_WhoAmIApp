@@ -16,4 +16,8 @@ public class CompetitorController {
     public List<Competitor> findAll() {
         return competitorService.findAll();
     }
+
+    public Competitor updateWinner(Competitor winner) {
+        return competitorService.updateWinner(winner);
+    }
 }
